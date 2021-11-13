@@ -8,7 +8,7 @@ export default function LayoutProductRegistrer(props){
 
     return(
        < PrivateRoute>
-            {JSON.parse(localStorage.getItem('user')).role=='Administrador'?
+            {localStorage.getItem('user') && JSON.parse(localStorage.getItem('user')).role=='Administrador'?
             <Formulario/>
             :<><Menu/><div class="alert alert-danger" role="alert">
             Usuario no autorizado!

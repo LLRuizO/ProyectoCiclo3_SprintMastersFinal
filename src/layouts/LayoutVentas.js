@@ -10,7 +10,7 @@ export default function LayoutVentas(props){
 
     return(
         <PrivateRoute>
-            {JSON.parse(localStorage.getItem('user')).role=='Administrador' || JSON.parse(localStorage.getItem('user')).role=='Vendedor'?
+            {localStorage.getItem('user') && JSON.parse(localStorage.getItem('user')).role=='Administrador' || JSON.parse(localStorage.getItem('user')).role=='Vendedor'?
             <Formulario/>
             :<><Menu/><div class="alert alert-danger" role="alert">
             Usuario no autorizado!
